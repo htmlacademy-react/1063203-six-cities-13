@@ -1,9 +1,11 @@
 import mainScreen from '../../pages/main-screen/main-screen.tsx';
 import React from 'react';
 
-function App(): React.ReactElement {
-  const cardsCount = Math.floor(Math.random() * 100);
+type AppProps = {
+  cardsCount: number;
+}
 
+function App({cardsCount}: AppProps): React.ReactElement {
   return (
     mainScreen({ cardsCount })
   );

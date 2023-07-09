@@ -6,8 +6,10 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+const cardsCount = Math.floor(Math.random() * 100);
+
 root.render(
   <React.StrictMode>
-    <App />
+    <App cardsCount={cardsCount}/>
   </React.StrictMode>
 );

@@ -1,11 +1,12 @@
 import React from 'react';
-import Card from '../../components/app/card.tsx';
+import Card from '../../components/card/card.tsx';
 
-type MainScreenProps = {
+type AppProps = {
   cardsCount: number;
 }
 
-function MainScreen({cardsCount}: MainScreenProps): React.ReactElement {
+function MainScreen({cardsCount}: AppProps): React.ReactElement {
+  // в дальнейшем ключ для списка будет адекватный - id или какой-нибудь uid
   const cardsList = new Array(cardsCount).fill('').map(() => <Card key={Math.random()} />);
 
   return (
