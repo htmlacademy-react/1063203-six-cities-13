@@ -9,6 +9,7 @@ import OfferScreen from '../../pages/offer-screen/offer-screen.tsx';
 import NotFoundScreen from '../../pages/not-found-screen/not-found-screen.tsx';
 import PrivateRoute from '../private-route/private-route.tsx';
 import {AuthStatus} from '../../const/authStatus.ts';
+import ScrollTop from '../scrollTop/scrollTop.tsx';
 
 type AppProps = {
   cardsCount: number;
@@ -18,6 +19,7 @@ function App({cardsCount}: AppProps): React.ReactElement {
   return (
     <HelmetProvider>
       <BrowserRouter>
+        <ScrollTop />
         <Routes>
           <Route
             path={AppRoute.Home}
