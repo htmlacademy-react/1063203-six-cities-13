@@ -1,6 +1,6 @@
 import React from 'react';
 
-function LoginScreen(): React.ReactElement {
+function Login(): React.ReactElement {
   return (
     <div className="page page--gray page--login">
       <header className="header">
@@ -46,4 +46,4 @@ function LoginScreen(): React.ReactElement {
   );
 }
 
-export default LoginScreen;
+export default Login;

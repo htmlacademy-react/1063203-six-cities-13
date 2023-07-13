@@ -5,7 +5,7 @@ type AppProps = {
   cardsCount: number;
 }
 
-function MainScreen({ cardsCount }: AppProps): React.ReactElement {
+function Main({ cardsCount }: AppProps): React.ReactElement {
   // в дальнейшем ключ для списка будет адекватный - id или какой-нибудь uid
   const cardsList = new Array(cardsCount).fill('').map(() => <Card key={Math.random()} />);
 
@@ -105,4 +105,4 @@ function MainScreen({ cardsCount }: AppProps): React.ReactElement {
   );
 }
 
-export default MainScreen;
+export default Main;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function MainEmptyScreen(): React.ReactElement {
+function MainEmpty(): React.ReactElement {
   return (
     <div className="page page--gray page--main">
       <main className="page__main page__main--index page__main--index-empty">
@@ -59,4 +59,4 @@ function MainEmptyScreen(): React.ReactElement {
   );
 }
 
-export default MainEmptyScreen;
+export default MainEmpty;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function NotFoundScreen(): React.ReactElement{
+function NotFound(): React.ReactElement{
   return (
     <>
       <h1>404. Page not found</h1>
@@ -10,4 +10,4 @@ function NotFoundScreen(): React.ReactElement{
   );
 }
 
-export default NotFoundScreen;
+export default NotFound;
