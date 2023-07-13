@@ -18,13 +18,13 @@ type AppProps = {
 
 function App({cardsCount}: AppProps): React.ReactElement {
   const pathName = window.location.pathname;
-  const isPageWithoutHeader = pathName === AppRoute.Login;
+  const isPageWithHeader = pathName !== AppRoute.Login;
 
   return (
     <HelmetProvider>
       <BrowserRouter>
         <ScrollTop />
-        { !isPageWithoutHeader && <Header /> }
+        { isPageWithHeader && <Header /> }
         <Routes>
           <Route
             path={AppRoute.Home}
