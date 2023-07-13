@@ -8,7 +8,7 @@ import FavoritesScreen from '../../pages/favorites-screen/favorites-screen.tsx';
 import OfferScreen from '../../pages/offer-screen/offer-screen.tsx';
 import NotFoundScreen from '../../pages/not-found-screen/not-found-screen.tsx';
 import PrivateRoute from '../private-route/private-route.tsx';
-import {AuthStatus} from '../../const/authStatus.ts';
+import { AuthStatus } from '../../const/authStatus.ts';
 import ScrollTop from '../scrollTop/scrollTop.tsx';
 import Header from '../header/header.tsx';
 
@@ -16,7 +16,7 @@ type AppProps = {
   cardsCount: number;
 }
 
-function App({cardsCount}: AppProps): React.ReactElement {
+function App({ cardsCount }: AppProps): React.ReactElement {
   const pathName = window.location.pathname;
   const isPageWithHeader = pathName !== AppRoute.Login;
 
