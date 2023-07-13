@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function NotFoundScreen():React.ReactElement {
+function NotFoundScreen(): React.ReactElement{
   return (
     <>
       <h1>404. Page not found</h1>
