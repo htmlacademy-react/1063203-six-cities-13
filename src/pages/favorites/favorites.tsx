@@ -1,6 +1,6 @@
 import React from 'react';
 
-function FavoritesScreen(): React.ReactElement {
+function Favorites(): React.ReactElement {
   return (
     <div className="page">
       <main className="page__main page__main--favorites">
@@ -153,4 +153,4 @@ function FavoritesScreen(): React.ReactElement {
   );
 }
 
-export default FavoritesScreen;
+export default Favorites;

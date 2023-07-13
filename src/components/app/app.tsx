@@ -1,13 +1,13 @@
-import MainScreen from '../../pages/main-screen/main-screen.tsx';
+import Main from '../../pages/main/main.tsx';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { AppRoute } from '../../routes';
-import LoginScreen from '../../pages/login-screen/login-screen.tsx';
-import FavoritesScreen from '../../pages/favorites-screen/favorites-screen.tsx';
-import OfferScreen from '../../pages/offer-screen/offer-screen.tsx';
-import NotFoundScreen from '../../pages/not-found-screen/not-found-screen.tsx';
-import PrivateRoute from '../private-route/private-route.tsx';
+import Login from '../../pages/login/login.tsx';
+import Favorites from '../../pages/favorites/favorites.tsx';
+import Offer from '../../pages/offer/offer.tsx';
+import NotFound from '../../pages/notFound/notFound.tsx';
+import PrivateRoute from '../privateRoute/privateRoute.tsx';
 import { AuthStatus } from '../../const/authStatus.ts';
 import ScrollTop from '../scrollTop/scrollTop.tsx';
 import Header from '../header/header.tsx';
@@ -28,12 +28,12 @@ function App({ cardsCount }: AppProps): React.ReactElement {
         <Routes>
           <Route
             path={AppRoute.Home}
-            element={<MainScreen cardsCount={cardsCount} />}
+            element={<Main cardsCount={cardsCount} />}
           />
 
           <Route
             path={AppRoute.Login}
-            element={<LoginScreen />}
+            element={<Login />}
           />
 
           <Route
@@ -42,19 +42,19 @@ function App({ cardsCount }: AppProps): React.ReactElement {
               <PrivateRoute
                 authorizationStatus={AuthStatus.NoAuth}
               >
-                <FavoritesScreen />
+                <Favorites />
               </PrivateRoute>
             }
           />
 
           <Route
             path={AppRoute.Offer}
-            element={<OfferScreen />}
+            element={<Offer />}
           />
 
           <Route
             path="*"
-            element={<NotFoundScreen />}
+            element={<NotFound />}
           />
         </Routes>
       </BrowserRouter>

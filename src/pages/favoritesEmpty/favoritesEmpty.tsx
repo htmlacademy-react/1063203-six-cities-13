@@ -1,6 +1,6 @@
 import React from 'react';
 
-function FavoritesEmptyScreen(): React.ReactElement {
+function FavoritesEmpty(): React.ReactElement {
   return (
     <div className="page page--favorites-empty">
       <main className="page__main page__main--favorites page__main--favorites-empty">
@@ -25,4 +25,4 @@ function FavoritesEmptyScreen(): React.ReactElement {
   );
 }
 
-export default FavoritesEmptyScreen;
+export default FavoritesEmpty;
