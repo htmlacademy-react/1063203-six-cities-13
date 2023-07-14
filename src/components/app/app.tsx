@@ -11,12 +11,14 @@ import PrivateRoute from '../privateRoute/privateRoute.tsx';
 import { AuthStatus } from '../../const/authStatus.ts';
 import ScrollTop from '../scrollTop/scrollTop.tsx';
 import Header from '../header/header.tsx';
+import { RentOffer } from '../../types/offer.ts';
 
 type AppProps = {
   cardsCount: number;
+  offers: RentOffer[];
 }
 
-function App({ cardsCount }: AppProps): React.ReactElement {
+function App({ cardsCount, offers }: AppProps): React.ReactElement {
   const pathName = window.location.pathname;
   const isPageWithHeader = pathName !== AppRoute.Login;
 
@@ -28,7 +30,7 @@ function App({ cardsCount }: AppProps): React.ReactElement {
         <Routes>
           <Route
             path={AppRoute.Home}
-            element={<Main cardsCount={cardsCount} />}
+            element={<Main cardsCount={cardsCount} offers={offers} />}
           />
 
           <Route
@@ -40,16 +42,16 @@ function App({ cardsCount }: AppProps): React.ReactElement {
             path={AppRoute.Favorites}
             element={
               <PrivateRoute
-                authorizationStatus={AuthStatus.NoAuth}
+                authorizationStatus={AuthStatus.Auth}
               >
-                <Favorites />
+                <Favorites offers={offers} />
               </PrivateRoute>
             }
           />
 
           <Route
             path={AppRoute.Offer}
-            element={<Offer />}
+            element={<Offer offers={offers} />}
           />
 
           <Route
