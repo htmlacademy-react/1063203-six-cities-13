@@ -1,14 +1,13 @@
 import React from 'react';
-import Card from '../../components/card/card.tsx';
+import { RentOffer } from '../../types/offer.ts';
+import OffersList from '../../components/main/offersList.tsx';
 
 type AppProps = {
   cardsCount: number;
+  offers: RentOffer[];
 }
 
-function Main({ cardsCount }: AppProps): React.ReactElement {
-  // в дальнейшем ключ для списка будет адекватный - id или какой-нибудь uid
-  const cardsList = new Array(cardsCount).fill('').map(() => <Card key={Math.random()} />);
-
+function Main({ cardsCount, offers }: AppProps): React.ReactElement {
   return (
     <>
       <div style={{ display: 'none' }}>
@@ -91,7 +90,7 @@ function Main({ cardsCount }: AppProps): React.ReactElement {
                   </ul>
                 </form>
                 <div className="cities__places-list places__list tabs__content">
-                  { cardsList }
+                  <OffersList offers={offers} />
                 </div>
               </section>
               <div className="cities__right-section">
