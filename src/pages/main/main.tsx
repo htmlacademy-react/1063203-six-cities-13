@@ -1,8 +1,8 @@
 import React from 'react';
 import MainOffersList from '../../components/main/main-offers-list.tsx';
-import { AppProps } from '../../types/app-props.ts';
+import { RentOffer } from '../../types/offer.ts';
 
-function Main({ offers }: AppProps): React.ReactElement {
+function Main({ offers }: { offers: RentOffer[] }): React.ReactElement {
   return (
     <>
       <div style={{ display: 'none' }}>
