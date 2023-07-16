@@ -6,19 +6,14 @@ import { AppRoute } from '../../routes';
 import Login from '../../pages/login/login.tsx';
 import Favorites from '../../pages/favorites/favorites.tsx';
 import Offer from '../../pages/offer/offer.tsx';
-import NotFound from '../../pages/notFound/notFound.tsx';
-import PrivateRoute from '../privateRoute/privateRoute.tsx';
-import { AuthStatus } from '../../const/authStatus.ts';
-import ScrollTop from '../scrollTop/scrollTop.tsx';
+import NotFound from '../../pages/not-found/not-found.tsx';
+import PrivateRoute from '../private-route/private-route.tsx';
+import { AuthStatus } from '../../const/auth-status.ts';
+import ScrollTop from '../scroll-top/scroll-top.tsx';
 import Header from '../header/header.tsx';
-import { RentOffer } from '../../types/offer.ts';
+import { AppProps } from '../../types/app-props.ts';
 
-type AppProps = {
-  cardsCount: number;
-  offers: RentOffer[];
-}
-
-function App({ cardsCount, offers }: AppProps): React.ReactElement {
+function App({ offers, offerReviews }: AppProps): React.ReactElement {
   const pathName = window.location.pathname;
   const isPageWithHeader = pathName !== AppRoute.Login;
 
@@ -30,7 +25,7 @@ function App({ cardsCount, offers }: AppProps): React.ReactElement {
         <Routes>
           <Route
             path={AppRoute.Home}
-            element={<Main cardsCount={cardsCount} offers={offers} />}
+            element={<Main offers={offers} />}
           />
 
           <Route
@@ -51,7 +46,7 @@ function App({ cardsCount, offers }: AppProps): React.ReactElement {
 
           <Route
             path={AppRoute.Offer}
-            element={<Offer offers={offers} />}
+            element={<Offer offers={offers} offerReviews={offerReviews} />}
           />
 
           <Route

@@ -1,7 +1,7 @@
 import React from 'react';
 import { RentOffer } from '../../types/offer.ts';
 
-function FavoritesPlace({ offer }: { offer: RentOffer}): React.ReactElement {
+function FavoritesPlace({ offer }: { offer: RentOffer }): React.ReactElement {
   return (
     <article className="favorites__card place-card">
       <div className="place-card__mark">
