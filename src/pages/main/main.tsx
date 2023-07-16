@@ -1,13 +1,8 @@
 import React from 'react';
-import { RentOffer } from '../../types/offer.ts';
-import OffersList from '../../components/main/offersList.tsx';
+import MainOffersList from '../../components/main/main-offers-list.tsx';
+import { AppProps } from '../../types/app-props.ts';
 
-type AppProps = {
-  cardsCount: number;
-  offers: RentOffer[];
-}
-
-function Main({ cardsCount, offers }: AppProps): React.ReactElement {
+function Main({ offers }: AppProps): React.ReactElement {
   return (
     <>
       <div style={{ display: 'none' }}>
@@ -73,7 +68,7 @@ function Main({ cardsCount, offers }: AppProps): React.ReactElement {
             <div className="cities__places-container container">
               <section className="cities__places places">
                 <h2 className="visually-hidden">Places</h2>
-                <b className="places__found">{cardsCount} places to stay in Amsterdam</b>
+                <b className="places__found">{offers.length} places to stay in Amsterdam</b>
                 <form className="places__sorting" action="#" method="get">
                   <span className="places__sorting-caption">Sort by</span>
                   <span className="places__sorting-type" tabIndex={0}>
@@ -90,7 +85,7 @@ function Main({ cardsCount, offers }: AppProps): React.ReactElement {
                   </ul>
                 </form>
                 <div className="cities__places-list places__list tabs__content">
-                  <OffersList offers={offers} />
+                  <MainOffersList offers={offers} />
                 </div>
               </section>
               <div className="cities__right-section">

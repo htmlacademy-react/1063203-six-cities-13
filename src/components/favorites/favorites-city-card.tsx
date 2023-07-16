@@ -1,13 +1,13 @@
 import React from 'react';
 import { RentOffer } from '../../types/offer.ts';
-import FavoritesPlace from './favoritesPlace.tsx';
+import FavoritesPlace from './favorites-place.tsx';
 
-type FavoriteItemType = {
+type FavoriteItemProps = {
   offer: RentOffer[];
   city: string;
 }
 
-function FavoritesCityCard({ offer, city }: FavoriteItemType): React.ReactElement {
+function FavoritesCityCard({ offer, city }: FavoriteItemProps): React.ReactElement {
   const favoritesPlace = offer.map((item) => (
     <FavoritesPlace
       key={item.id}

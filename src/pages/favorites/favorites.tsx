@@ -1,10 +1,11 @@
 import React from 'react';
 import { RentOffer } from '../../types/offer.ts';
-import FavoritesCityCard from '../../components/favorites/favoritesCityCard.tsx';
+import FavoritesCityCard from '../../components/favorites/favorites-city-card.tsx';
+import Footer from '../../components/footer/footer.tsx';
 
 function Favorites({ offers }: { offers: RentOffer[] }): React.ReactElement {
-  const citiesWithOffers: string[] = [...new Set(offers.map((offer) => offer.offerCity))];
-  const filteredOffersByCity = citiesWithOffers.map((city) => {
+  const uniqueCitiesWithOffers: string[] = [...new Set(offers.map((offer) => offer.offerCity))];
+  const filteredOffersByCity = uniqueCitiesWithOffers.map((city) => {
     const offersByCity = offers.filter((offer) => offer.offerCity === city);
 
     return (
@@ -28,11 +29,7 @@ function Favorites({ offers }: { offers: RentOffer[] }): React.ReactElement {
           </section>
         </div>
       </main>
-      <footer className="footer container">
-        <a className="footer__logo-link" href="main.html">
-          <img className="footer__logo" src="img/logo.svg" alt="6 cities logo" width="64" height="33" />
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }
