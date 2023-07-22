@@ -13,7 +13,7 @@ import ScrollTop from '../scroll-top/scroll-top.tsx';
 import Header from '../header/header.tsx';
 import { AppProps } from '../../types/app-props.ts';
 
-function App({ offers, offerReviews }: AppProps): React.ReactElement {
+function App({ offers, offerReviews, city }: AppProps): React.ReactElement {
   const pathName = window.location.pathname;
   const isPageWithHeader = pathName !== AppRoute.Login;
 
@@ -25,7 +25,7 @@ function App({ offers, offerReviews }: AppProps): React.ReactElement {
         <Routes>
           <Route
             path={AppRoute.Home}
-            element={<Main offers={offers} />}
+            element={<Main offers={offers} city={city} />}
           />
 
           <Route
@@ -46,7 +46,7 @@ function App({ offers, offerReviews }: AppProps): React.ReactElement {
 
           <Route
             path={AppRoute.Offer}
-            element={<Offer offers={offers} offerReviews={offerReviews} />}
+            element={<Offer offers={offers} offerReviews={offerReviews} city={city} />}
           />
 
           <Route
