@@ -9,6 +9,7 @@ type MapProps = {
   city: City;
   points: Point[];
   selectedPoint?: Point;
+  mapHeight?: string;
 };
 
 const defaultCustomIcon = new Icon({
@@ -24,7 +25,7 @@ const currentCustomIcon = new Icon({
 });
 
 function Map(props: MapProps): React.ReactElement {
-  const { city, points, selectedPoint } = props;
+  const { city, points, selectedPoint, mapHeight } = props;
   const mapRef = useRef(null);
   const map = useMap(mapRef, city);
 
@@ -52,7 +53,7 @@ function Map(props: MapProps): React.ReactElement {
     }
   }, [map, points, selectedPoint]);
 
-  return <div style={{ width: '100%' }} ref={mapRef}></div>;
+  return <div style={{ width: '100%', height: mapHeight }} ref={mapRef}></div>;
 }
 
 export default Map;

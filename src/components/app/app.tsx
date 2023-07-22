@@ -12,10 +12,17 @@ import { AuthStatus } from '../../const/auth-status.ts';
 import ScrollTop from '../scroll-top/scroll-top.tsx';
 import Header from '../header/header.tsx';
 import { AppProps } from '../../types/app-props.ts';
+import { RentOffer } from '../../types/offer.ts';
 
 function App({ offers, offerReviews, city }: AppProps): React.ReactElement {
   const pathName = window.location.pathname;
   const isPageWithHeader = pathName !== AppRoute.Login;
+  const points = offers.map((offer: RentOffer) => ({
+    lat: offer.location.latitude,
+    lng: offer.location.longitude,
+    title: offer.title,
+    zoom: offer.location.zoom
+  }));
 
   return (
     <HelmetProvider>
@@ -25,7 +32,7 @@ function App({ offers, offerReviews, city }: AppProps): React.ReactElement {
         <Routes>
           <Route
             path={AppRoute.Home}
-            element={<Main offers={offers} city={city} />}
+            element={<Main offers={offers} city={city} points={points} />}
           />
 
           <Route
@@ -46,7 +53,7 @@ function App({ offers, offerReviews, city }: AppProps): React.ReactElement {
 
           <Route
             path={AppRoute.Offer}
-            element={<Offer offers={offers} offerReviews={offerReviews} city={city} />}
+            element={<Offer offers={offers} offerReviews={offerReviews} city={city} points={points} />}
           />
 
           <Route
