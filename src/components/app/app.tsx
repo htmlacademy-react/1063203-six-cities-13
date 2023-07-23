@@ -1,6 +1,6 @@
 import Main from '../../pages/main/main.tsx';
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { AppRoute } from '../../routes';
 import Login from '../../pages/login/login.tsx';
@@ -14,8 +14,8 @@ import Header from '../header/header.tsx';
 import { AppProps } from '../../types/app-props.ts';
 
 function App({ offers, offerReviews, city }: AppProps): React.ReactElement {
-  const pathName = window.location.pathname;
-  const isPageWithHeader = pathName !== AppRoute.Login;
+  const { pathname } = useLocation();
+  const isPageWithHeader = pathname !== AppRoute.Login;
 
   return (
     <HelmetProvider>
