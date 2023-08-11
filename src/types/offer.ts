@@ -7,6 +7,11 @@ export type RentOffer = {
   type: string;
   inBookmarks: boolean;
   offerCity: string;
+  location: {
+    latitude: number;
+    longitude: number;
+    zoom: number;
+  };
 }
 
 export type OfferReview = {

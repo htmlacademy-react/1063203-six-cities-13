@@ -9,7 +9,12 @@ export const offers: RentOffer[] = [
     rating: '80%',
     type: 'Private room',
     inBookmarks: true,
-    offerCity: 'Amsterdam'
+    offerCity: 'Amsterdam',
+    location: {
+      latitude: 52.3909553943508,
+      longitude: 4.85309666406198,
+      zoom: 10
+    }
   },
   {
     id: 2,
@@ -19,7 +24,12 @@ export const offers: RentOffer[] = [
     rating: '80%',
     type: 'Apartment',
     inBookmarks: false,
-    offerCity: 'Amsterdam'
+    offerCity: 'Amsterdam',
+    location: {
+      latitude: 52.3609553943508,
+      longitude: 4.85309666406198,
+      zoom: 10
+    }
   },
   {
     id: 3,
@@ -29,7 +39,12 @@ export const offers: RentOffer[] = [
     rating: '80%',
     type: 'Apartment',
     inBookmarks: true,
-    offerCity: 'Brussels'
+    offerCity: 'Amsterdam',
+    location: {
+      latitude: 52.3909553943508,
+      longitude: 4.929309666406198,
+      zoom: 10
+    }
   },
   {
     id: 4,
@@ -39,6 +54,11 @@ export const offers: RentOffer[] = [
     rating: '80%',
     type: 'Private room',
     inBookmarks: false,
-    offerCity: 'Cologne'
+    offerCity: 'Amsterdam',
+    location: {
+      latitude: 52.3809553943508,
+      longitude: 4.939309666406198,
+      zoom: 10
+    }
   }
 ];
