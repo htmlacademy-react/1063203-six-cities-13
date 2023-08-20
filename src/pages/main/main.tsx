@@ -2,16 +2,9 @@ import React from 'react';
 import MainOffersList from '../../components/main/main-offers-list.tsx';
 import { RentOffer } from '../../types/offer.ts';
 import Map from '../../components/map/map.tsx';
-import { City } from '../../types/map.ts';
+import { City, Point } from '../../types/map.ts';
 
-function Main({ offers, city }: { offers: RentOffer[]; city: City }): React.ReactElement {
-  const points = offers.map((offer: RentOffer) => ({
-    lat: offer.location.latitude,
-    lng: offer.location.longitude,
-    title: offer.title,
-    zoom: offer.location.zoom
-  }));
-
+function Main({ offers, city, points }: { offers: RentOffer[]; city: City; points: Point[] }): React.ReactElement {
   return (
     <>
       <div style={{ display: 'none' }}>
